@@ -1,0 +1,33 @@
+--- a/lib/Automake/Wrap.pm
++++ b/lib/Automake/Wrap.pm
+@@ -57,7 +57,7 @@
+ {
+   my ($txt) = @_;
+   my $len = length ($txt);
+-  $len += 7 * ($txt =~ tr/\t/\t/d);
++  $len += 7 * ($txt =~ tr/\t/\t/);
+   return $len;
+ }
+ 
+--- a/automake.in
++++ b/automake.in
+@@ -3821,7 +3821,7 @@
+ sub substitute_ac_subst_variables ($)
+ {
+   my ($text) = @_;
+-  $text =~ s/\${([^ \t=:+{}]+)}/&substitute_ac_subst_variables_worker ($1)/ge;
++  $text =~ s/\$\{([^ \t=:+{}]+)}/&substitute_ac_subst_variables_worker ($1)/ge;
+   return $text;
+ }
+ 
+--- a/aclocal.in
++++ b/aclocal.in
+@@ -467,7 +467,7 @@
+ # on where the file comes from.
+ # $WHERE is the location to use in the diagnostic if the file
+ # does not exist.
+-sub scan_file ($$$)
++sub scan_file
+ {
+   my ($type, $file, $where) = @_;
+   my $basename = basename $file;
