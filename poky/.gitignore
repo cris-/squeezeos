@@ -1,0 +1,5 @@
+build/tmp-jive
+build/tmp-baby
+build/conf
+bitbake
+sources
