@@ -13,7 +13,8 @@ inherit kernel
 SRC_URI = " \
           ${KERNELORG_MIRROR}pub/linux/kernel/v2.6/linux-2.6.26.tar.bz2 \
           ${SQUEEZEOS_SVN};module=${LINUX_ARCH} \
-          "
+          file://makefile-linux-${LINUX_ARCH}.patch \
+          file://timeconst-pl-linux-${LINUX_ARCH}.patch"
 
 S = "${WORKDIR}/linux-${LINUX_VERSION}"
 
@@ -24,6 +25,10 @@ COMPATIBLE_MACHINE = "(baby)"
 # to simply apply the patchset using quilt.
 do_patch() {
 	cp -rf ${WORKDIR}/${LINUX_ARCH}/patches ${S}
+	cp -f ${WORKDIR}/makefile-linux-${LINUX_ARCH}.patch ${S}/patches/kernel.org
+	cp -f ${WORKDIR}/timeconst-pl-linux-${LINUX_ARCH}.patch ${S}/patches/kernel.org
+	echo "kernel.org/makefile-linux-${LINUX_ARCH}.patch" >> ${S}/patches/series
+	echo "kernel.org/timeconst-pl-linux-${LINUX_ARCH}.patch" >> ${S}/patches/series
 	cd ${S}
 	quilt push -a
 }
