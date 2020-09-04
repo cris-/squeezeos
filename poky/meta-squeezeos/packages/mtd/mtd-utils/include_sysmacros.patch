@@ -1,0 +1,20 @@
+--- a/ubi-utils/new-utils/src/libubi.c
++++ b/ubi-utils/new-utils/src/libubi.c
+@@ -25,6 +25,7 @@
+ #include <string.h>
+ #include <fcntl.h>
+ #include <sys/stat.h>
++#include <sys/sysmacros.h>
+ #include <sys/types.h>
+ #include <dirent.h>
+ #include <unistd.h>
+--- a/ubi-utils/new-utils/src/libmtd.c
++++ b/ubi-utils/new-utils/src/libmtd.c
+@@ -22,6 +22,7 @@
+ 
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <sys/sysmacros.h>
+ #include <sys/ioctl.h>
+ #include <unistd.h>
+ #include <fcntl.h>
