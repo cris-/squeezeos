@@ -31,7 +31,7 @@ EXTRA_OECONF = "--with-shared \
 	        --without-ada \
 	        --enable-termcap \
 	        --without-cxx-binding \
-	        --with-terminfo-dirs=${sysconfdir}/terminfo:${datadir}/terminfo \
+		--with-termlib \
 	        --enable-overwrite"
 export BUILD_CCFLAGS = "-I${S}/ncurses -I${S}/include ${BUILD_CFLAGS}"
 export BUILD_LDFLAGS = ""
