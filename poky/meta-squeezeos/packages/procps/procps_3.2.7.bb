@@ -9,7 +9,7 @@ SRC_URI += "file://procmodule.patch;patch=1 \
 EXTRA_OEMAKE = "CFLAGS=-I${STAGING_INCDIR} \
 		CPPFLAGS=-I${STAGING_INCDIR} \
                 LDFLAGS=-L${STAGING_LIBDIR} -Wl,--rpath-link,${STAGING_LIBDIR} \
-                CURSES=-lncurses \
+                CURSES='-lncurses -ltinfo' \
                 install='install -D' \
                 ldconfig=echo"
 
@@ -46,3 +46,4 @@ PACKAGES = "${PN}-dbg ${PN}-doc ${PN}"
 FILES_${PN} = "${base_libdir}"
 FILES_${PN} += "${base_bindir}/ps.${PN}"
 FILES_${PN}-doc = "${mandir}
+
