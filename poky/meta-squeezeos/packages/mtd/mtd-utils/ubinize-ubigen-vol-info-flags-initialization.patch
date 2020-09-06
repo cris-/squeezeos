@@ -1,0 +1,11 @@
+--- a/ubi-utils/new-utils/src/ubinize.c
++++ b/ubi-utils/new-utils/src/ubinize.c
+@@ -422,6 +422,8 @@
+ 			return errmsg("unknown flags \"%s\" in section \"%s\"",
+ 				      p, sname);
+ 		}
++	} else {
++		vi->flags = 0;
+ 	}
+ 
+ 	/* Initialize the rest of the volume information */
