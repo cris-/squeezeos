@@ -10,5 +10,5 @@ target_libdir := "${libdir}"
 inherit native
 
 EXTRA_OECONF += "--with-opkglibdir=${target_libdir} --disable-gpg"
-CPPFLAGS_append = " -Wno-unused-but-set-variable -Wno-stringop-truncation -Wno-misleading-indentation -Wno-stringop-overflow" 
+CPPFLAGS_append = " -Wno-unused-but-set-variable -Wno-stringop-truncation -Wno-misleading-indentation -Wno-stringop-overflow -fcommon" 
 
