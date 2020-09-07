@@ -1,5 +1,6 @@
 build/tmp-jive
 build/tmp-baby
+build/tmp-qemuarm
 build/conf
 bitbake
 sources
