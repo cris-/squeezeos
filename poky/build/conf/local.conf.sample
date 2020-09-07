@@ -14,7 +14,7 @@ BBFILE_PRIORITY_moblin = "5"
 # Uncomment and set to allow bitbake to execute multiple tasks at once.
 # For a quadcore, BB_NUMBER_THREADS = "4", PARALLEL_MAKE = "-j 4" would
 # be appropriate.
-# BB_NUMBER_THREADS = "4"
+BB_NUMBER_THREADS = "4"
 # Also, make can be passed flags so it run parallel threads e.g.:
 # PARALLEL_MAKE = "-j 4"
 
@@ -30,7 +30,8 @@ BBFILE_PRIORITY_normal = "5"
 BBFILE_PRIORITY_squeezeos = "9"
 
 # The machine to target
-MACHINE ?= "jive"
+MACHINE ?= "baby"
+#MACHINE ?= "jive"
 #MACHINE ?= "qemuarm"
 
 # Other supported machines
