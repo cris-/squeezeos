@@ -32,4 +32,6 @@ do_stage () {
 	for pc in lib/*/*.pc; do
 		install -m 0644 $pc ${STAGING_LIBDIR}/pkgconfig/ || die "failed to install $h"
 	done
+
+	install -m 0755 misc/tune2fs ${STAGING_BINDIR_NATIVE}/ || die "failed to install tune2fs"
 }
