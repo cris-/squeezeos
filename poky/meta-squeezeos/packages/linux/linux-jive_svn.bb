@@ -11,7 +11,7 @@ inherit kernel
 SRC_URI = " \
           ${SQUEEZEOS_SVN};module=s3c2412 \
           file://defconfig-jive \
-          "
+          file://makefile-linux-${MACHINE}.patch"
 
 S = "${WORKDIR}/s3c2412/linux-${LINUX_VERSION}"
 
@@ -20,6 +20,9 @@ COMPATIBLE_MACHINE = "(jive)"
 
 # new kernel patches are managed by quilt, and checked into svn.
 do_patch() {
+	mkdir -p ${S}/patches/kernel.org
+	cp -f ${WORKDIR}/makefile-linux-${MACHINE}.patch ${S}/patches/kernel.org
+	echo "kernel.org/makefile-linux-${MACHINE}.patch" >> ${S}/patches/series
 	cd ${S}
 	quilt push -a
 }
