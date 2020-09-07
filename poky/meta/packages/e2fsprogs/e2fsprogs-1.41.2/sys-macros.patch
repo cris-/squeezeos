@@ -1,0 +1,10 @@
+--- a/lib/blkid/devname.c
++++ b/lib/blkid/devname.c
+@@ -24,6 +24,7 @@
+ #include <ctype.h>
+ #if HAVE_SYS_TYPES_H
+ #include <sys/types.h>
++#include <sys/sysmacros.h>
+ #endif
+ #include <dirent.h>
+ #if HAVE_SYS_STAT_H

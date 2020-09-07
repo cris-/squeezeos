@@ -4,6 +4,10 @@ inherit native
 DEPENDS = "gettext-native"
 PR = "r1"
 
+SRC_URI_append = " file://sys-macros.patch;patch=1"
+
+CPPFLAGS_append = " -std=gnu90"
+
 do_stage () {
 	oe_libinstall -a -C lib libblkid ${STAGING_LIBDIR}/
 	oe_libinstall -a -C lib libe2p ${STAGING_LIBDIR}/
