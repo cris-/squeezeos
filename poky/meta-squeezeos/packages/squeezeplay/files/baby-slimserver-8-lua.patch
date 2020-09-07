@@ -1,0 +1,12 @@
+--- a/share/jive/net/SocketHttp.lua
++++ b/share/jive/net/SocketHttp.lua
+@@ -276,6 +276,7 @@
+ 			System:getMachine(),
+ 			'/',
+ 			string.gsub(JIVE_VERSION, "%s", "-"),
++			'-lms8',
+ 			' (',
+ 			System:getArch(),
+ 			')'})
+
+
